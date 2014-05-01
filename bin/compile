@@ -10,5 +10,6 @@ set -e
 # Debug mode
 [[ $DEBUG ]] && set -x
 
-apt-get update
+[[ -f "$(find /usr/include -name 'sasl.h')" ]] && exit 0
+[[ -z "$(apt-cache search libsasl2-dev)" ]] && apt-get update &>-
 apt-get install -y libsasl2-dev
