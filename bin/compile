@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Usage:
+#
+#     $ bin/compile <build-dir> <cache-dir> <env-dir>
+
+# fail fast
+set -e
+
+# Debug mode
+[[ $DEBUG ]] && set -x
+
+apt-get install -y libsasl2-dev
