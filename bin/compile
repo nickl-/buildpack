@@ -13,3 +13,5 @@ set -e
 [[ -f "$(find /usr/include -name 'sasl.h')" ]] && exit 0
 [[ -z "$(apt-cache search libsasl2-dev)" ]] && apt-get update &>-
 apt-get install -y libsasl2-dev
+[[ -z "$(apt-cache search imagemagick)" ]] && apt-get update &>-
+apt-get install -y imagemagick
